@@ -1,5 +1,6 @@
 @import 'reset';
 @import 'grid';
+@import 'susy_config';
 
 * {
     box-sizing: border-box;
@@ -13,6 +14,10 @@ html {
     font-size: 2.8rem;
     margin-bottom: 0.5em;
     color: white;
+}
+
+.subtitle--cyan {
+    color: cyan;
 }
 
 .text {
@@ -91,7 +96,6 @@ html {
 // =============================== 
 // FLexbox Gallery
 // =============================== 
-
 .flexbox-gallery-wrapper {
     padding: 2em;
     background-color: cyan;
@@ -121,5 +125,71 @@ html {
 
     @include bp(medium) {
         width: 22%;
+    }
+}
+
+
+// =============================== 
+// Susy grid Gallery
+// =============================== 
+.susy-gallery-wrapper {
+    padding: 2em;
+    background-color: white;
+}
+
+.susy-gallery {
+    padding: 2em;
+    background-color: cyan;
+
+    @include bp(small) {
+        @include container();
+    }
+}
+
+.susy-gallery__item {
+    padding: 2em;
+    background-color: salmon;
+    margin-bottom: 2em;
+
+    @include bp(small) {
+        @include span(6);
+
+        &:nth-child(even) {
+            @include last;
+        }
+    }
+
+    @include bp(medium) {
+        @include span(4);
+
+        &:nth-child(even) {
+            float: left;
+            // find how to retreive gutter width from susy layout.
+            margin-right: 5.88235%;
+        }
+
+        &:nth-child(3n) {
+            @include last;
+        }
+    }
+
+    @include bp(large) {
+        @include span(3);
+
+        &:nth-child(even) {
+            float: left;
+            // find how to retreive gutter width from susy layout.
+            margin-right: 5.88235%;
+        }
+
+        &:nth-child(3n) {
+            float: left;
+            // find how to retreive gutter width from susy layout.
+            margin-right: 5.88235%;
+        }
+
+        &:nth-child(4n) {
+            @include last;
+        }
     }
 }

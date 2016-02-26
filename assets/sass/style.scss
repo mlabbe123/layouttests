@@ -1,0 +1,125 @@
+@import 'reset';
+@import 'grid';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.subtitle {
+    font-size: 2.8rem;
+    margin-bottom: 0.5em;
+    color: white;
+}
+
+.text {
+    font-size: 1.2rem;
+}
+
+
+// =============================== 
+// inline-block Gallery
+// =============================== 
+.inlineblock-gallery-wrapper {
+    padding: 2em;
+    background-color: salmon;
+}
+
+.inlineblock-gallery {
+    padding: 2em;
+    padding-bottom: 0;
+    background-color: white;
+
+    // font-size fix for whitespace between li elements. OR USE UGLY HTML COMMENT THING (see index.html)
+    // font-size: 0;
+}
+
+.inlineblock-gallery__item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2em;
+    padding: 2em;
+    background-color: cyan;
+    vertical-align: top;
+
+    @include bp(small) {
+        width: 47%;
+        margin-right: 6%;
+
+        &:nth-child(even) {
+            margin-right: 0;
+        }
+    }
+
+    @include bp(medium) {
+        width: 30%;
+        margin-right: 5%;
+
+        &:nth-child(even) {
+            margin-right: 5%;
+        }
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+
+    @include bp(large) {
+        width: 22%;
+        margin-right: 4%;
+
+        &:nth-child(even) {
+            margin-right: 4%;
+        }
+
+        &:nth-child(3n) {
+            margin-right: 4%;
+        }
+
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
+    }
+
+    // font-size: 0 fix for whitespace between li elements. REM obligatory... OR USE UGLY HTML COMMENT THING (see index.html)
+    // font-size: 1rem;
+}
+
+// =============================== 
+// FLexbox Gallery
+// =============================== 
+
+.flexbox-gallery-wrapper {
+    padding: 2em;
+    background-color: cyan;
+}
+
+.flexbox-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2em;
+    padding-bottom: 0;
+    background-color: white;
+}
+
+.flexbox-gallery__item {
+    padding: 2em;
+    background-color: salmon;
+    margin-bottom: 2em;
+
+    @include bp(small) {
+        width: 47%;
+    }
+
+    @include bp(medium) {
+        width: 30%;
+    }
+
+    @include bp(medium) {
+        width: 22%;
+    }
+}

@@ -1,0 +1,43 @@
+$breakpoints: (
+    "small": 768px,
+    "medium": 1024px,
+    "large": 1440px
+);
+
+@mixin bp($name) {
+    @if not map-has-key($breakpoints, $name) {
+        @warn "Invalid breakpoint #{$name}";
+    } @else {
+        @if map-get($breakpoints, $name) {
+            @media (min-width: #{map-get($breakpoints, $name)}) {
+                @content;
+            }
+        } @else {
+            @content;
+        }
+    } 
+}
+
+// @mixin small-and-above {
+//     @media (min-width: #{map-get($breakpoints, "small")}) {
+//         @content;
+//     }
+// }
+
+// @mixin small-only {
+//     @media (min-width: #{map-get($breakpoints, "small")} and (max-width: ((#{map-get($breakpoints, "medium")} / 1px) - 1px)) * 1px) {
+//         @content;
+//     }
+// }
+
+// @mixin medium-and-above {
+//     @media (min-width: #{map-get($breakpoints, "medium")}) {
+//         @content;
+//     }
+// }
+
+// @mixin large-and-above {
+//     @media (min-width: #{map-get($breakpoints, "large")}) {
+//         @content;
+//     }
+// }

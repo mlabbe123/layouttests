@@ -1,0 +1,22 @@
+{
+  "name": "galleries",
+  "description": "",
+  "main": "",
+  "authors": [
+    "mlabbe <mathieu.labbedb@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mlabbe123/layouttests",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.12"
+  }
+}

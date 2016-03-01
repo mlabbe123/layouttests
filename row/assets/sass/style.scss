@@ -1,0 +1,270 @@
+@import 'reset';
+@import 'grid';
+@import 'susy_config';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.subtitle {
+    margin-bottom: 0.2em;
+    font-size: 2.8rem;
+    color: white;
+}
+
+.subtitle-caption {
+    margin-bottom: 0.5em;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.subtitle--cyan {
+    color: cyan;
+}
+
+.subtitle-caption--cyan {
+    color: cyan;
+}
+
+.text {
+    font-size: 1.2rem;
+}
+
+
+// =============================== 
+// inline-block Row
+// =============================== 
+.inlineblock-row-wrapper {
+    padding: 2em;
+    background-color: salmon;
+}
+
+.inlineblock-row {
+    padding: 2em;
+    padding-bottom: 0;
+    background-color: white;
+    text-align: center;
+
+    // font-size fix for whitespace between li elements. OR USE UGLY HTML COMMENT THING (see index.html)
+    // font-size: 0;
+}
+
+.inlineblock-row__item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2em;
+    padding: 2em;
+    background-color: cyan;
+    vertical-align: top;
+
+    @include bp(medium) {
+        width: 30%;
+        margin-right: 5%;
+
+        &:nth-child(even) {
+            margin-right: 5%;
+        }
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+
+    // font-size: 0 fix for whitespace between li elements. REM obligatory... OR USE UGLY HTML COMMENT THING (see index.html)
+    // font-size: 1rem;
+}
+
+.inlineblock-row__item__title {
+    margin-bottom: 1rem;
+    font-size: 2em;
+}
+
+.inlineblock-row__item__image {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.inlineblock-row__item__text {
+    margin-bottom: 1rem;
+}
+
+.inlineblock-row__item__cta {
+    display: block;
+    text-align: center;
+    background-color: white;
+    padding: 0.5rem 1rem;
+}
+
+
+// =============================== 
+// table-cell Row
+// =============================== 
+.tablecell-row-wrapper {
+    padding: 2em;
+    background-color: salmon;
+}
+
+.tablecell-row {
+    background-color: white;
+
+    // This sets the margin between child elements.
+    @include bp(medium) {
+        border-spacing: 2em;
+    }
+}
+
+.tablecell-row__item {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2em;
+    padding: 2em;
+    padding-bottom: 4em;
+    background-color: cyan;
+    vertical-align: top;
+
+    @include bp(medium) {
+        display: table-cell;
+        width: 30%;
+    }
+}
+
+.tablecell-row__item__title {
+    margin-bottom: 1rem;
+    font-size: 2em;
+}
+
+.tablecell-row__item__image {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.tablecell-row__item__text {
+    margin-bottom: 1rem;
+}
+
+.tablecell-row__item__cta {
+    position: absolute;
+    bottom: 2em;
+    left: 2em;
+    right: 2em;
+    display: block;
+    text-align: center;
+    background-color: white;
+    padding: 0.5rem 1rem;
+}
+
+
+// =============================== 
+// FLexbox row
+// =============================== 
+.flexbox-row-wrapper {
+    padding: 2em;
+    background-color: cyan;
+}
+
+.flexbox-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2em;
+    padding-bottom: 0;
+    background-color: white;
+}
+
+.flexbox-row__item {
+    position: relative;
+    padding: 2em;
+    padding-bottom: 4em;
+    background-color: salmon;
+    margin-bottom: 2em;
+
+    @include bp(small) {
+        width: 47%;
+    }
+
+    @include bp(medium) {
+        width: 30%;
+    }
+}
+
+.flexbox-row__item__title {
+    margin-bottom: 1rem;
+    font-size: 2em;
+}
+
+.flexbox-row__item__image {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.flexbox-row__item__text {
+    margin-bottom: 1rem;
+}
+
+.flexbox-row__item__cta {
+    position: absolute;
+    bottom: 2em;
+    left: 2em;
+    right: 2em;
+    display: block;
+    text-align: center;
+    background-color: white;
+    padding: 0.5rem 1rem;
+}
+
+
+// =============================== 
+// Susy grid Gallery
+// =============================== 
+.susy-row-wrapper {
+    padding: 2em;
+    background-color: white;
+}
+
+.susy-row {
+    padding: 2em;
+    background-color: cyan;
+
+    @include bp(small) {
+        @include container();
+    }
+}
+
+.susy-row__item {
+    padding: 2em;
+    background-color: salmon;
+    margin-bottom: 2em;
+
+    @include bp(medium) {
+        @include span(4);
+
+        &:nth-child(3n) {
+            @include last;
+        }
+    }
+}
+
+.susy-row__item__title {
+    margin-bottom: 1rem;
+    font-size: 2em;
+}
+
+.susy-row__item__image {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.susy-row__item__text {
+    margin-bottom: 1rem;
+}
+
+.susy-row__item__cta {
+    display: block;
+    text-align: center;
+    background-color: white;
+    padding: 0.5rem 1rem;
+}
